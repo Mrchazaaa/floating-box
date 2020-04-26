@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'FloatingIconThree',
+    name: 'FloatingIcon',
     props: {
       image: {
         required: true,

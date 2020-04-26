@@ -32,7 +32,7 @@
       <FloatingIcon 
       :image="require('@/assets/IET-bursary.jpg')"
       href="https://google.com"/>
-
+    </div>
   </div>
 </template>
 
