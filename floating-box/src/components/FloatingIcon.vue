@@ -1,60 +1,54 @@
 <template>
-  <div class="floating-container" ref="image-ref">  
-    <!-- <div class="inner-container" ref="image-ref">   -->
-      <img ref="img" :src="image"/>
-    <!-- </div> -->
+  <div v-if="href == null" class="floating-container">
+    <img :src="image"/>
+  </div>
+  <div v-else class="floating-container">
+    <a :href="href">
+      <img :src="image"/>
+    </a>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'FloatingIconTwo',
+    name: 'FloatingIconThree',
     props: {
       image: {
         required: true,
         type: String
       },
-      // height: {
-      //   required: true,
-      //   type: Number
-      // },
       href: String,
-    },
-    data: function() {
-      return {
-          // width: this.$refs["image-ref"].width
-          width: this.$refs["image-ref"].width
-        };
-    },
-    mounted:function(){
-      // let height = this.$refs["image-ref"].style.backgroundColor = 'black';
     },
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  $height: 200px;
-  img {
-    object-fit: contain;
+  a {
+    width: 100%;
     height: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  img {
+    transition: 0.5s;
+    box-sizing: border-box;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
   }
   img:hover {
-    // width: 80%;
+    padding: 0px;
   }
   .floating-container {
-    box-sizing: border-box;
-    background-color: yellow;
-    margin: 0% 10%;
-    height: 200px;
-    padding: 10px;
-    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-  }
-  .floating-container:hover {
-    padding: 0px;
+    box-sizing: border-box;
+    height: 200px !important;
+    width: 80%;
+    margin: 0% 10%;
   }
 </style>
