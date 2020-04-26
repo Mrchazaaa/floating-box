@@ -1,18 +1,14 @@
 <template>
-  <div v-if="href == null" class="floating-container" ref="image-ref">
-    <img ref="img" :src="image"/>
-    <p>{{width}}</p>
-  </div>
-  <div v-else class="floating-container">
-    <a :href="href">
-      <img :src="image"/>
-    </a>
+  <div class="floating-container" ref="image-ref">  
+    <!-- <div class="inner-container" ref="image-ref">   -->
+      <img ref="img" :src="image"/>
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
   export default {
-    name: 'FloatingIcon',
+    name: 'FloatingIconTwo',
     props: {
       image: {
         required: true,
@@ -40,19 +36,25 @@
 <style lang="scss" scoped>
   $height: 200px;
   img {
-    width: 70%;
-    transition: 0.5s;
-    max-height: 90%;
+    object-fit: contain;
+    height: 100%;
   }
   img:hover {
-    width: 80%;
+    // width: 80%;
   }
   .floating-container {
-    background-color: blue;
-    height: $height;
-    width: 100%;
+    box-sizing: border-box;
+    background-color: yellow;
+    margin: 0% 10%;
+    height: 200px;
+    padding: 10px;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
+  }
+  .floating-container:hover {
+    padding: 0px;
   }
 </style>
