@@ -1,8 +1,8 @@
 <template>
-  <div v-if="href == null" class="floating-container">
+  <div v-if="href == null" class="floating-container" :style="'height: ' + height + 'px;'">
     <img :src="image"/>
   </div>
-  <div v-else class="floating-container">
+  <div v-else class="floating-container" :style="'height: ' + height + 'px;'">
     <a :href="href">
       <img :src="image"/>
     </a>
@@ -17,6 +17,10 @@
         required: true,
         type: String
       },
+      height: {
+        required: true,
+        type: Number
+      },
       href: String,
     },
   }
@@ -25,10 +29,8 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   a {
-    width: 100%;
     height: 100%;
-    padding: 0px;
-    margin: 0px;
+    width: 100%;
   }
   img {
     transition: 0.5s;
@@ -47,8 +49,5 @@
     justify-content: center;
     transition: 0.5s;
     box-sizing: border-box;
-    height: 200px !important;
-    width: 80%;
-    margin: 0% 10%;
   }
 </style>

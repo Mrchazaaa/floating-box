@@ -28,11 +28,10 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
 
-    <div style="background-color: cyan;">
-      <FloatingIcon 
-      :image="require('@/assets/IET-bursary.jpg')"
-      href="https://google.com"/>
-    </div>
+    <FloatingIcon 
+    :height="200"
+    :image="require('@/assets/IET-bursary.jpg')"
+    href="https://google.com"/>
   </div>
 </template>
 
@@ -51,7 +50,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 body {
   margin: 0px;
   padding: 0px;
